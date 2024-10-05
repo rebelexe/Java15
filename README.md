@@ -8,7 +8,7 @@ git clone <your-forked-repo-link>
 cd Java15
 ```
 
-- Compile and run
+- Compile and run (make sure to use git bash on windows)
 ```
 make clean && make run
 ```
