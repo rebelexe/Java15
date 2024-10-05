@@ -7,10 +7,10 @@ import java.awt.event.ActionListener;
 
 public class Calculator{
 
-  public static void main(String args[]){
+  Calculator()
+  {
     JFrame main = new JFrame("Calculator");
     main.setSize(300, 400);
-    main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     main.setLayout(new GridLayout(7, 1));
 
     JLabel expression = new JLabel("Expression: ");
@@ -68,5 +68,5 @@ public class Calculator{
     }
 
     main.setVisible(true);
-    }
+  }
 }
