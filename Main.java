@@ -40,5 +40,11 @@ public class Main {
                 ElectricityBill ebill = new ElectricityBill();
             }
       });
+
+      t3.addActionListener(new ActionListener(){
+         public void actionPerformed(ActionEvent e){
+               Calculator c = new Calculator();
+         }
+      });
    }
 }
