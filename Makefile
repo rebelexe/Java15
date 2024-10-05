@@ -1,17 +1,12 @@
 # Compiler and flags
 JAVAC = javac
 JAVA = java
-# Use appropriate remove command based on OS
-ifeq ($(OS),Windows_NT)
-    RM = del /Q
-else
-    RM = rm -f
-endif
+RM = rm -f
 
 # Find all Java files in the current directory
 SRC = $(wildcard *.java)
 # Specify the main class (with package)
-MAIN = Java15.Main
+MAIN = -classpath .. Java15.Main
 
 # Default rule to compile all Java files
 all: $(SRC)
@@ -19,7 +14,7 @@ all: $(SRC)
 
 # Run the main class
 run: all
-	$(JAVA) -classpath .. $(MAIN)
+	$(JAVA) $(MAIN)
 
 # Clean up compiled classes
 clean:
