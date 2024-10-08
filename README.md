@@ -1,3 +1,10 @@
+# Java Assignment by - GROUP 15
+- Nithin (4SO23CS158)
+- Rayan (4SO23CS182)
+- Reuben (4SO23CS186)
+- Nawaf (4SO23CS148)
+
+
 ## Build Instructions
 
 - Fork the repository
