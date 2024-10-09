@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-
 abstract class Shape {
     int n1, n2;
     abstract float printArea();
@@ -42,7 +41,6 @@ class Circle extends Shape {
     }
 }
 
-
 public class ShapeProgram {
 
     ShapeProgram() {
@@ -70,41 +68,77 @@ public class ShapeProgram {
         g1.add(r2);
         g1.add(r3);
 
-        JLabel l2 = new JLabel("Enter value n1 :");
+        JLabel l2 = new JLabel();
         l2.setBounds(50, 150, 150, 25);
         f.add(l2);
         JTextField t1 = new JTextField();
         t1.setBounds(200, 150, 100, 25);
         f.add(t1);
-
-        JLabel l3 = new JLabel("Enter value n2 : ");
+        t1.setVisible(false);
+        
+        JLabel l3 = new JLabel();
         l3.setBounds(50, 180, 150, 25);
         f.add(l3);
+        l3.setVisible(false);
+
         JTextField t2 = new JTextField();
         t2.setBounds(200, 180, 100, 25);
         f.add(t2);
+        t2.setVisible(false);
+
+
+        r1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                l2.setText("Enter length:");
+                l3.setText("Enter breadth:");
+                t1.setVisible(true);
+                l3.setVisible(true);
+                t2.setVisible(true);
+            }
+        });
+
+        r2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                l2.setText("Enter base:");
+                l3.setText("Enter height:");
+                t1.setVisible(true);
+                l3.setVisible(true);
+                t2.setVisible(true);
+            }
+        });
+
+        r3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                l2.setText("Enter radius:");
+                t1.setVisible(true);
+                l3.setVisible(false);
+                t2.setVisible(false);
+            }
+        });
 
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(1, 2, 10, 10));
 
-        JLabel resArea = new JLabel("Area : ");
+        JLabel resArea = new JLabel("Area: ");
         panel.add(resArea);
         JLabel resAreaVal = new JLabel();
         panel.add(resAreaVal);
 
         JButton b = new JButton("Calculate Area");
-        b.setBounds(100, 220, 150, 25);
+        b.setBounds(50, 220, 150, 25);
         f.add(b);
 
         JButton cancelBtn = new JButton("Cancel");
-        cancelBtn.setBounds(260, 220, 100, 25);
+        cancelBtn.setBounds(200, 220, 150, 25);
         f.add(cancelBtn);
 
         b.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 Shape shape = null;
-                int n1 = Integer.parseInt(t1.getText());
+                int n1 = 0;
                 int n2 = 0;
+                n1 = Integer.parseInt(t1.getText());
+
                 if (r1.isSelected()) {
                     n2 = Integer.parseInt(t2.getText());
                     shape = new Rectangle(n1, n2);
