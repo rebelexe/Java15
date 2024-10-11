@@ -15,9 +15,8 @@ public class Main {
    static JMenuItem t2 = new JMenuItem("Employee");
    static JMenuItem t3 = new JMenuItem("Calucalator");
    static JMenuItem t4 = new JMenuItem("Binary to decimal");
-
-   public Main() {
-   }
+   static JMenuItem t5 = new JMenuItem("Job Application");
+   static JMenuItem t6 = new JMenuItem("Shape Program");
 
    public static void main(String[] args) {
       JFrame f = new JFrame();
@@ -26,10 +25,12 @@ public class Main {
       mb.add(m1);
       mb.add(m2);
       mb.add(m3);
-      m1.add(t1);
-      m1.add(t2);
-      m2.add(t3);
-      m2.add(t4);
+      m1.add(t3);
+      m1.add(t4);
+      m2.add(t1);
+      m2.add(t2);
+      m2.add(t5);
+      m2.add(t6);
       f.setJMenuBar(mb);
       f.setLayout(null);
       f.setVisible(true);
@@ -41,9 +42,33 @@ public class Main {
             }
       });
 
+      t2.addActionListener(new ActionListener(){
+         public void actionPerformed(ActionEvent e){
+               EmployeeUI empl = new EmployeeUI();
+         }
+      });
+
       t3.addActionListener(new ActionListener(){
          public void actionPerformed(ActionEvent e){
                Calculator c = new Calculator();
+         }
+      });
+      
+      t4.addActionListener(new ActionListener(){
+         public void actionPerformed(ActionEvent e){
+               Binary b = new Binary();
+         }
+      });
+
+      t5.addActionListener(new ActionListener(){
+         public void actionPerformed(ActionEvent e){
+               JobApplicationProgram jb = new JobApplicationProgram();
+         }
+      });
+
+      t6.addActionListener(new ActionListener(){
+         public void actionPerformed(ActionEvent e){
+               ShapeProgram sp = new ShapeProgram();
          }
       });
    }
